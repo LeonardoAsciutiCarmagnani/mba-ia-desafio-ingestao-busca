@@ -32,9 +32,10 @@ def ingest_pdf() -> None:
 
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=1000,
-        chunk_overlap=200,
+        chunk_overlap=150,
         separators=["\n\n", "\n", " ", ""],
     )
+
     chunks = splitter.split_documents(documents)
 
     print(f"Indexando {len(chunks)} chunks no PostgreSQL...")
